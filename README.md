@@ -29,3 +29,12 @@ When the customer clicks on Booking history button in the main page view, he is 
 
 ![Booking History View 2](https://user-images.githubusercontent.com/40236708/143804678-ba7e7d85-336a-45d5-abde-bd394ec95124.PNG)
 
+
+## 4. Reservation Confirmation - Step 1 - for customers
+
+When the customer clicks on the "Book" button for any flight schedule in the main page view, he is greeted with the details confirmation page as shown below. Upon filling the details and clicking on the "Proceed" button, the customer will be directed to the seat availability view. There are sanity checks for all the fields in the UI to ensure correct data format is received at the WCF service
+
+![Reservation Step 1](https://user-images.githubusercontent.com/40236708/143804956-29f0a0db-65ca-4536-92ac-09dd30957f1d.PNG)
+
+
+## 5. Seat Availability View - for customers
