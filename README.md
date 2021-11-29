@@ -18,3 +18,8 @@ To execute a forced refresh on UI, there is a "Refresh" button. The user can als
 
 ![Main Page View (With Search Results)](https://user-images.githubusercontent.com/40236708/143803815-f6e90e73-d002-4c7e-8a12-99661e64493c.PNG)
 
+In case there are no flight bookings, appropriate message will be displayed after the search button is clicked as shown in the figure below
+
+
+## 3. 
+
