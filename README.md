@@ -73,3 +73,12 @@ The admins can set up flight between a source and destination location. They hav
 The number of seats that the admin can assign depends on the number he entered in the figure shown above. After clicking on "Open Flight layout" button, the admin will be directed to the following page. Here I chose 2 seats for admin, hence I selected 2 seats in the flight to be available.
 
 ![Seat View Admin](https://user-images.githubusercontent.com/40236708/143807518-0d0f731e-abff-4a92-95df-e7a202471878.PNG)
+
+If admin selects few seats for economy class, he cannot reselect those seats in business class and vice versa. This validation is performed and the prompt is displayed if admin tries to select a seat in "red" which implies the seats he already booked previously for a different class (economy or business)
+
+![Seat View Admin Validation](https://user-images.githubusercontent.com/40236708/143807779-62b089e7-e7a4-4510-9cdd-34b275c01022.PNG)
+
+
+## 7. Data Model 
+
+I used SQL Server as the database. The figure below shows the complete data model for this application
