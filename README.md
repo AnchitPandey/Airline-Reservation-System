@@ -52,5 +52,6 @@ The below figure shows a prompt that appears when the customer tries to select a
 
 This is the final confirmation page, upon which the WCF service determines seat availability, makes changes in SQL Server database if the user clicked on "Confirm" button
 
+![Reservation Confirmation Page](https://user-images.githubusercontent.com/40236708/143806424-d18628bc-04ec-4650-806a-242b6e5020c7.PNG)
 
-
+## 5. Main page view - for admins
