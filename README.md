@@ -47,3 +47,10 @@ The below figure shows a prompt that appears when the customer tries to select a
 
 ![Already Reserved User View](https://user-images.githubusercontent.com/40236708/143805744-189de3d2-5f84-4904-872d-b8138dc97cb5.PNG)
 
+
+## 4. Reservation Confirmation - Step 2 - for customers
+
+This is the final confirmation page, upon which the WCF service determines seat availability, makes changes in SQL Server database if the user clicked on "Confirm" button
+
+
+
