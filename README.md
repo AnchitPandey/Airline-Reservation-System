@@ -63,3 +63,9 @@ If the seat was already booked by the time the customer tried to book it, then t
 ![Concurrent Booking](https://user-images.githubusercontent.com/40236708/143806719-49be1ddc-34bb-4230-b279-2edfaebbe77e.PNG)
 
 ## 5. Main page view - for admins
+
+The admins can set up flight between a source and destination location. They have the flexibility to assign the number of available business class or economy class seats in the flight. They can also set the layout of available business and economy class seats as shown below. 
+
+![Admin View](https://user-images.githubusercontent.com/40236708/143807166-1ea4ce7e-16cf-41fd-b62d-82b9c9f063d8.PNG)
+
+## 6. Setting seat layout for flights - for admins
