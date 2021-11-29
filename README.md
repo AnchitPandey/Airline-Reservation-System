@@ -13,4 +13,8 @@ Upon launch, users are greeted with the following login page. Data for authentic
 
 ## 2. Main page view - for customers
 
-Upon successful login, the customers are directed to the main page view below. The customers can set the source/destination locations, departure date and the travel class. After clicking on search, the data is processed in WCF & SQL Server and the search results obtained by the request are displayed in the row format user control as shown. For the figure below, I had 3 entries in DB for that search and the obtained results are shown below. For every search result, there is a "Book" button that allows the user to book that flight.  
+Upon successful login, the customers are directed to the main page view below. The customers can set the source/destination locations, departure date and the travel class. After clicking on search, the data is processed in WCF & SQL Server and the search results obtained by the request are displayed in the row format user control as shown. For the figure below, I had 3 entries in DB for that search and the obtained results are shown below. For every search result, there is a "Book" button that allows the user to book that flight.
+To execute a forced refresh on UI, there is a "Refresh" button. The user can also view his booking history using the "Booking History" button
+
+![Main Page View (With Search Results)](https://user-images.githubusercontent.com/40236708/143803815-f6e90e73-d002-4c7e-8a12-99661e64493c.PNG)
+
