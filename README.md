@@ -1,6 +1,6 @@
 # Airline Reservation System
 
-In this project, I created a miniature version of a flight reservation software using WPF and WCF. The software allows the customers to book flights, handle concurrent booking of the same ticket, view seat availability for a flight. The admins can create a new flight schedule, modify existing seat availability and more.  The WPF app interacts with the WCF services to request/send data. The WCF service processes the data and interacts with SQL Server database to fetch data. This is a multi-threaded application, allowing and handling concurrent reservations of a particular seat by two different customers. 
+In this project, I created a miniature version of a flight reservation software using WPF, WCF, SQL Server and Entity Framework. The software allows the customers to book flights, handle concurrent booking of the same ticket, view seat availability for a flight. The admins can create a new flight schedule, modify existing seat availability and more.  The WPF app interacts with the WCF services to request/send data. The WCF service processes the data and interacts with SQL Server database to fetch data. I used Entity Framework to interface the WCF service with SQL Server database. This is a multi-threaded application, allowing and handling concurrent reservations of a particular seat by two different customers. 
 
 # Features of the app
 
