@@ -27,3 +27,5 @@ In case there are no flight bookings, appropriate message will be displayed afte
 
 When the customer clicks on Booking history button in the main page view, he is directed to the page shown below. Here, the customer can view the details of all the flights he successfully booked in the past
 
+![Booking History View 2](https://user-images.githubusercontent.com/40236708/143804678-ba7e7d85-336a-45d5-abde-bd394ec95124.PNG)
+
