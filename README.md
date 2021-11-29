@@ -54,4 +54,9 @@ This is the final confirmation page, upon which the WCF service determines seat 
 
 ![Reservation Confirmation Page](https://user-images.githubusercontent.com/40236708/143806424-d18628bc-04ec-4650-806a-242b6e5020c7.PNG)
 
+If the seat booking is successful, the customer is greeted with the following message as shown and this new flight schedule gets added to the users booking history view. 
+
+If the seat was already booked by the time the customer tried to book it, then the customer is shown the following notification and he is taken back to seat selection page in case there are available seats or directly to the main page in case there are no available seats for that flight.
+
+
 ## 5. Main page view - for admins
