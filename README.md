@@ -72,3 +72,4 @@ The admins can set up flight between a source and destination location. They hav
 
 The number of seats that the admin can assign depends on the number he entered in the figure shown above. After clicking on "Open Flight layout" button, the admin will be directed to the following page. 
 
+![Seat View Admin](https://user-images.githubusercontent.com/40236708/143807518-0d0f731e-abff-4a92-95df-e7a202471878.PNG)
