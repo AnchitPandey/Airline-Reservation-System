@@ -38,3 +38,9 @@ When the customer clicks on the "Book" button for any flight schedule in the mai
 
 
 ## 5. Seat Availability View - for customers
+
+Upon filling the details of confirmation page as shown in the figure above, the customer will be directed to the seat selection page as shown below. The seats show in red are indicate that they have been occupied already. The seats in green are the available seats. The current seat selection of the customer is denoted by the colour yellow. The customer is limited to select at most and atleast 1 seat. Any further selection will result in a prompt. 
+
+![Seat Reservation User View](https://user-images.githubusercontent.com/40236708/143805691-4b86b450-cb7a-448c-a742-464ba9eb9b7f.PNG)
+
+
