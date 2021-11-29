@@ -82,3 +82,6 @@ If admin selects few seats for economy class, he cannot reselect those seats in 
 ## 7. Data Model 
 
 I used SQL Server as the database. The figure below shows the complete data model for this application
+
+![Data Model](https://user-images.githubusercontent.com/40236708/143808051-3005f469-75ad-4552-a2f7-b3ac7add646f.PNG)
+
