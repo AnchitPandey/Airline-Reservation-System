@@ -1,0 +1,94 @@
+﻿<Window x:Class="AirlineReservationGUI.Views.ConfirmationPage_UserDetailsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AirlineReservationGUI.Views"
+        mc:Ignorable="d"
+        Title="ConfirmationPage_UserDetailsView" Height="450" Width="800">
+    <Grid Background="#222840">
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="1.5*" />
+            <RowDefinition  Height="*" />
+            <RowDefinition  Height="*" />
+            <RowDefinition  Height="*" />
+            <RowDefinition  Height="*" />
+            <RowDefinition  Height="*" />
+            <RowDefinition  Height="*" />
+    
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width ="*" />
+            <ColumnDefinition Width = "*" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*" />
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0">
+                <Button Click="backButtonClicked" FontSize="18" Content="Back to Search" MaxHeight="60"  Foreground="White" Grid.Column="0" Background="#222840" BorderThickness="2" BorderBrush="#C552EB">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="30"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Border>
+
+            <Border CornerRadius="30" Background="#131633" Margin="10"  Grid.Column="1">
+                <Label FontWeight="Bold" Foreground="White" Content="Airline Reservation System" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" />
+            </Border>
+        </Grid>
+        <Label Foreground="White" Content="First Name" Grid.Row="1" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Foreground="White" Content="Last Name" Grid.Row="2" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Foreground="White" Content="Age" Grid.Row="3" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Foreground="White" Content="Passport Number" Grid.Row="4" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Foreground="White" Content="Country" Grid.Row="5" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+
+        <TextBox Margin="10" x:Name="firstNameTextBox" Grid.Row="1" Grid.Column="1" FontSize="20" >
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="12"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox Margin="10" x:Name="lastNameTextBox"  Grid.Row="2" Grid.Column="1" FontSize="20" >
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="12"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox Margin="10" x:Name="ageTextBox" Grid.Row="3" Grid.Column="1" FontSize="20" >
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="12"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox Margin="10" x:Name="passportNumberTextBox" Grid.Row="4" Grid.Column="1" FontSize="20"  >
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="12"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox Margin="10" x:Name="countryTextBox" Grid.Row="5" Grid.Column="1" FontSize="20"  >
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="12"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <Button Background="#C552EB" FontSize="22" Click ="NavigateToSeatSelectionPage" Content="Proceed" Foreground="White" Grid.Row="6" Grid.ColumnSpan="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="25"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Window>

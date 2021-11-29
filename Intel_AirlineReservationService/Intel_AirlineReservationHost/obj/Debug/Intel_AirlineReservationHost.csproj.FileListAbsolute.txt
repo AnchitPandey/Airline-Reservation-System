@@ -1,0 +1,15 @@
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationHost\bin\Debug\Intel_AirlineReservationHost.exe.config
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationHost\bin\Debug\Intel_AirlineReservationHost.exe
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationHost\bin\Debug\Intel_AirlineReservationHost.pdb
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationHost\bin\Debug\Intel_AirlineReservationService.dll
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationHost\bin\Debug\EntityFramework.dll
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationHost\bin\Debug\Intel_AirlineReservationService.pdb
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationHost\bin\Debug\Intel_AirlineReservationService.dll.config
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationHost\bin\Debug\EntityFramework.xml
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationHost\obj\Debug\Intel_AirlineReservationHost.csprojAssemblyReference.cache
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationHost\obj\Debug\Intel_AirlineReservationHost.csproj.CoreCompileInputs.cache
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationHost\obj\Debug\Intel_AirlineReservationHost.csproj.CopyComplete
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationHost\obj\Debug\Intel_AirlineReservationHost.exe
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationHost\obj\Debug\Intel_AirlineReservationHost.pdb
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationHost\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationHost\bin\Debug\EntityFramework.SqlServer.xml

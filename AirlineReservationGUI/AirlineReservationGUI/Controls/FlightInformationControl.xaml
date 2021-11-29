@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="AirlineReservationGUI.Controls.FlightInformationControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="500">
+
+    <Border CornerRadius="20" Background="#131633" Margin="5" Height="50">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width= "*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Border  Grid.Column="0">
+                <TextBlock Text="Flight Name" x:Name="flightNameTextBlock" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+            </Border>
+            <Border  Grid.Column="1">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Grid.Column="1" x:Name="departureTextBlock" Text="Departure" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+                    <TextBlock  x:Name="departureTimeBlock" Text="Departure Time" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10"/>
+                </StackPanel>
+            </Border>
+            <Border  Grid.Column="2">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Grid.Column="2" x:Name="arrivalTextBlock" Text="Arrival" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+                    <TextBlock  x:Name="arrivalTimeBlock" Text="Arrival Time" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10"/>
+                </StackPanel>
+            </Border>
+            <Border  Grid.Column="3">
+                <TextBlock Grid.Column="3" x:Name="priceTextBlock" Text="Price" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+            </Border>
+            <Button  Grid.Column="4" Background="#C552EB" FontSize="15"  Content="Book" Foreground="White"  Click="ProceedToSeatBooking" >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+    </Border>
+</UserControl>

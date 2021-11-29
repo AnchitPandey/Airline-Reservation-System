@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="AirlineReservationGUI.Controls.BookingHistoryControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AirlineReservationGUI.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Border CornerRadius="20" Background="#131633" Margin="5" Height="50">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width= "*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                
+            </Grid.ColumnDefinitions>
+            <Border  Grid.Column="0">
+                <TextBlock Text="Flight Name" x:Name="flightNameTextBlock" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+            </Border>
+            <Border  Grid.Column="1">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Grid.Column="1" x:Name="departureLocationNameTextBlock" Text="Departure" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+                    <TextBlock  x:Name="departureTimeTextBlock" Text="Departure Time" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10"/>
+                </StackPanel>
+            </Border>
+            <Border  Grid.Column="2">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Grid.Column="2" x:Name="arrivalLocationNameTextBlock" Text="Arrival" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+                    <TextBlock  x:Name="arrivalTimeTextBlock" Text="Arrival Time" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10"/>
+                </StackPanel>
+            </Border>
+            <Border  Grid.Column="3">
+                <TextBlock Grid.Column="3" x:Name="priceTextBlock" Text="Price" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+            </Border>
+            <Border  Grid.Column="4">
+                <TextBlock Grid.Column="4" x:Name="nameOnTicketTextBlock" Text="Name on Ticket" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+            </Border>
+
+            <Border  Grid.Column="5">
+                <TextBlock Grid.Column="5" x:Name="seatIdTextBlock" Text="Seat Id" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+            </Border>
+
+            <Border Grid.Column="6">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Grid.Column="6" x:Name="bookingIdBlock" Text="Booking Id" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+                    <TextBlock Grid.Column="6" x:Name="bookingDateBlock" Text="Booking Date" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10"/>                   
+                </StackPanel>
+            </Border>
+
+        </Grid>
+    </Border>
+</UserControl>

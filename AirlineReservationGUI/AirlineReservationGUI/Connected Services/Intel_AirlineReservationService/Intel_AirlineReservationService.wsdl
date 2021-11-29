@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Intel_AirlineReservationService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IIntel_AirlineReservationService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Intel_AirlineReservationService.Serializable_Models" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Intel_AirlineReservationService.Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IIntel_AirlineReservationService_login_InputMessage">
+    <wsdl:part name="parameters" element="tns:login" />
+  </wsdl:message>
+  <wsdl:message name="IIntel_AirlineReservationService_login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntel_AirlineReservationService_RegisterUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUser" />
+  </wsdl:message>
+  <wsdl:message name="IIntel_AirlineReservationService_RegisterUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntel_AirlineReservationService_GetAllLocations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLocations" />
+  </wsdl:message>
+  <wsdl:message name="IIntel_AirlineReservationService_GetAllLocations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLocationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntel_AirlineReservationService_GetBookingHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookingHistory" />
+  </wsdl:message>
+  <wsdl:message name="IIntel_AirlineReservationService_GetBookingHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookingHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntel_AirlineReservationService_GetFlightSchedules_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFlightSchedules" />
+  </wsdl:message>
+  <wsdl:message name="IIntel_AirlineReservationService_GetFlightSchedules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFlightSchedulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntel_AirlineReservationService_AddFlightSchedule_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddFlightSchedule" />
+  </wsdl:message>
+  <wsdl:message name="IIntel_AirlineReservationService_AddFlightSchedule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddFlightScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntel_AirlineReservationService_addScheduleClassPrice_InputMessage">
+    <wsdl:part name="parameters" element="tns:addScheduleClassPrice" />
+  </wsdl:message>
+  <wsdl:message name="IIntel_AirlineReservationService_addScheduleClassPrice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addScheduleClassPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntel_AirlineReservationService_addSeatAvailability_InputMessage">
+    <wsdl:part name="parameters" element="tns:addSeatAvailability" />
+  </wsdl:message>
+  <wsdl:message name="IIntel_AirlineReservationService_addSeatAvailability_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addSeatAvailabilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntel_AirlineReservationService_GetAvailableSeats_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableSeats" />
+  </wsdl:message>
+  <wsdl:message name="IIntel_AirlineReservationService_GetAvailableSeats_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableSeatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntel_AirlineReservationService_BookSeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:BookSeat" />
+  </wsdl:message>
+  <wsdl:message name="IIntel_AirlineReservationService_BookSeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BookSeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntel_AirlineReservationService_addBooking_InputMessage">
+    <wsdl:part name="parameters" element="tns:addBooking" />
+  </wsdl:message>
+  <wsdl:message name="IIntel_AirlineReservationService_addBooking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntel_AirlineReservationService_GetAllSchedulesFlights_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSchedulesFlights" />
+  </wsdl:message>
+  <wsdl:message name="IIntel_AirlineReservationService_GetAllSchedulesFlights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSchedulesFlightsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IIntel_AirlineReservationService">
+    <wsdl:operation name="login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIntel_AirlineReservationService/login" message="tns:IIntel_AirlineReservationService_login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIntel_AirlineReservationService/loginResponse" message="tns:IIntel_AirlineReservationService_login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIntel_AirlineReservationService/RegisterUser" message="tns:IIntel_AirlineReservationService_RegisterUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIntel_AirlineReservationService/RegisterUserResponse" message="tns:IIntel_AirlineReservationService_RegisterUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLocations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIntel_AirlineReservationService/GetAllLocations" message="tns:IIntel_AirlineReservationService_GetAllLocations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIntel_AirlineReservationService/GetAllLocationsResponse" message="tns:IIntel_AirlineReservationService_GetAllLocations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookingHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIntel_AirlineReservationService/GetBookingHistory" message="tns:IIntel_AirlineReservationService_GetBookingHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIntel_AirlineReservationService/GetBookingHistoryResponse" message="tns:IIntel_AirlineReservationService_GetBookingHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightSchedules">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIntel_AirlineReservationService/GetFlightSchedules" message="tns:IIntel_AirlineReservationService_GetFlightSchedules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIntel_AirlineReservationService/GetFlightSchedulesResponse" message="tns:IIntel_AirlineReservationService_GetFlightSchedules_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFlightSchedule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIntel_AirlineReservationService/AddFlightSchedule" message="tns:IIntel_AirlineReservationService_AddFlightSchedule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIntel_AirlineReservationService/AddFlightScheduleResponse" message="tns:IIntel_AirlineReservationService_AddFlightSchedule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addScheduleClassPrice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIntel_AirlineReservationService/addScheduleClassPrice" message="tns:IIntel_AirlineReservationService_addScheduleClassPrice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIntel_AirlineReservationService/addScheduleClassPriceResponse" message="tns:IIntel_AirlineReservationService_addScheduleClassPrice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addSeatAvailability">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIntel_AirlineReservationService/addSeatAvailability" message="tns:IIntel_AirlineReservationService_addSeatAvailability_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIntel_AirlineReservationService/addSeatAvailabilityResponse" message="tns:IIntel_AirlineReservationService_addSeatAvailability_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableSeats">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIntel_AirlineReservationService/GetAvailableSeats" message="tns:IIntel_AirlineReservationService_GetAvailableSeats_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIntel_AirlineReservationService/GetAvailableSeatsResponse" message="tns:IIntel_AirlineReservationService_GetAvailableSeats_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BookSeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIntel_AirlineReservationService/BookSeat" message="tns:IIntel_AirlineReservationService_BookSeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIntel_AirlineReservationService/BookSeatResponse" message="tns:IIntel_AirlineReservationService_BookSeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addBooking">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIntel_AirlineReservationService/addBooking" message="tns:IIntel_AirlineReservationService_addBooking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIntel_AirlineReservationService/addBookingResponse" message="tns:IIntel_AirlineReservationService_addBooking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSchedulesFlights">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIntel_AirlineReservationService/GetAllSchedulesFlights" message="tns:IIntel_AirlineReservationService_GetAllSchedulesFlights_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIntel_AirlineReservationService/GetAllSchedulesFlightsResponse" message="tns:IIntel_AirlineReservationService_GetAllSchedulesFlights_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IIntel_AirlineReservationService" type="tns:IIntel_AirlineReservationService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IIntel_AirlineReservationService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="login">
+      <soap12:operation soapAction="http://tempuri.org/IIntel_AirlineReservationService/login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUser">
+      <soap12:operation soapAction="http://tempuri.org/IIntel_AirlineReservationService/RegisterUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLocations">
+      <soap12:operation soapAction="http://tempuri.org/IIntel_AirlineReservationService/GetAllLocations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookingHistory">
+      <soap12:operation soapAction="http://tempuri.org/IIntel_AirlineReservationService/GetBookingHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightSchedules">
+      <soap12:operation soapAction="http://tempuri.org/IIntel_AirlineReservationService/GetFlightSchedules" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFlightSchedule">
+      <soap12:operation soapAction="http://tempuri.org/IIntel_AirlineReservationService/AddFlightSchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addScheduleClassPrice">
+      <soap12:operation soapAction="http://tempuri.org/IIntel_AirlineReservationService/addScheduleClassPrice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addSeatAvailability">
+      <soap12:operation soapAction="http://tempuri.org/IIntel_AirlineReservationService/addSeatAvailability" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableSeats">
+      <soap12:operation soapAction="http://tempuri.org/IIntel_AirlineReservationService/GetAvailableSeats" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookSeat">
+      <soap12:operation soapAction="http://tempuri.org/IIntel_AirlineReservationService/BookSeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addBooking">
+      <soap12:operation soapAction="http://tempuri.org/IIntel_AirlineReservationService/addBooking" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSchedulesFlights">
+      <soap12:operation soapAction="http://tempuri.org/IIntel_AirlineReservationService/GetAllSchedulesFlights" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Intel_AirlineReservationService">
+    <wsdl:port name="NetTcpBinding_IIntel_AirlineReservationService" binding="tns:NetTcpBinding_IIntel_AirlineReservationService">
+      <soap12:address location="net.tcp://localhost:8090/Intel_AirlineReservationService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8090/Intel_AirlineReservationService</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>DESKTOP-BTG5L90\anchi</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

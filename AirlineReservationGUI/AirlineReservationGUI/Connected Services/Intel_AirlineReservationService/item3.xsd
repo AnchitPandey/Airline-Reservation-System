@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Intel_AirlineReservationService.Serializable_Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Intel_AirlineReservationService.Serializable_Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8080/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfBookingHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BookingHistory" nillable="true" type="tns:BookingHistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBookingHistory" nillable="true" type="tns:ArrayOfBookingHistory" />
+  <xs:complexType name="BookingHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arrivalDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="arrivalLocationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="arrivalTime" type="ser:duration" />
+      <xs:element minOccurs="0" name="bookingDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="bookingId" type="xs:int" />
+      <xs:element minOccurs="0" name="departureDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="departureLocationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="departureTime" type="ser:duration" />
+      <xs:element minOccurs="0" name="flightName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="flightPrice" type="xs:double" />
+      <xs:element minOccurs="0" name="nameOnTicket" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="seatId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BookingHistory" nillable="true" type="tns:BookingHistory" />
+  <xs:complexType name="ArrayOfAvailableFlightInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AvailableFlightInformation" nillable="true" type="tns:AvailableFlightInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAvailableFlightInformation" nillable="true" type="tns:ArrayOfAvailableFlightInformation" />
+  <xs:complexType name="AvailableFlightInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arrivalDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="arrivalLocationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="arrivalTime" type="ser:duration" />
+      <xs:element minOccurs="0" name="classType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="departureDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="departureLocationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="departureTime" type="ser:duration" />
+      <xs:element minOccurs="0" name="flightName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="flightNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="price" type="xs:double" />
+      <xs:element minOccurs="0" name="scheduleId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AvailableFlightInformation" nillable="true" type="tns:AvailableFlightInformation" />
+</xs:schema>

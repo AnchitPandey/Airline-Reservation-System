@@ -1,0 +1,143 @@
+﻿<Window x:Class="AirlineReservationGUI.Views.AvailableFlightsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AirlineReservationGUI.Views"
+        mc:Ignorable="d"
+        xmlns:uc ="clr-namespace:AirlineReservationGUI.Controls"
+        Title="AvailableFlightsView" Height="500" Width="900">
+    <Grid Background="#222840">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="7*" />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Border VerticalAlignment="Center" Background="#131633"  CornerRadius="20">
+                <Label FontWeight="Bold" Foreground="White" Content="Airline Reservation System" FontSize="30" HorizontalAlignment="Center"/>
+            </Border>
+            <Button FontSize="15" Foreground="White" Background="#222840" BorderThickness="2" BorderBrush="#C552EB" Grid.Column="1" Margin="10" Click="RefreshView" Content="Refresh" >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="25"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <!--            
+            <GroupBox Grid.Column="1" BorderBrush="#131633" Background="#131633" Margin="10">
+                <Button Click="RefreshView" Content="Refresh" />
+            </GroupBox>
+            -->
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width= "1.5*" />
+                <ColumnDefinition Width= "1.5*" />
+                <ColumnDefinition Width= "1.5*" />
+                <ColumnDefinition Width= "1.5*" />
+                <ColumnDefinition Width= "*" />
+
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" CornerRadius="20" Background="#131633" Margin="10" Padding="10">
+                <StackPanel>
+                    <Label Foreground="White" Content="From" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <ComboBox x:Name= "departureLocationComboBox" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Column="1" CornerRadius="20" Background="#131633" Margin="10" Padding="10">
+                <StackPanel>
+                    <Label Foreground="White" Content="To" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <ComboBox x:Name= "arrivalLocationComboBox" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Column="2" CornerRadius="20" Background="#131633" Margin="10" Padding="10">
+                <StackPanel>
+                    <Label Foreground="White" Content="Departure Date" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <DatePicker x:Name= "departureDateComboBox" />
+                </StackPanel>
+            </Border>
+
+
+            <Border Grid.Column="3" CornerRadius="20" Background="#131633" Margin="10" Padding="10">
+                <StackPanel>
+                        <Label Foreground="White" Content="Travel Class" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <ComboBox x:Name= "travelClassComboBox" />
+                    </StackPanel>
+              
+            </Border>
+
+            <Button Foreground="White" Background="Green"   FontSize="15"  Click="SearchAvailableFlights" Content="Search" Margin="10" Grid.Column="4" MaxHeight="50">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="25"/>
+                    </Style>
+                </Button.Resources>
+
+            </Button>
+            <!--
+            <GroupBox Grid.Column="4" BorderThickness="3">
+                <Button Click="SearchAvailableFlights" Content="Search" Height="40" Width="70"/>
+            </GroupBox> -->
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Border x:Name="flightNameBorder" Grid.Column="0" CornerRadius="20" Background="#C552EB" Margin="10" Padding="10">
+                <Label Content="Flight Name" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="White" />
+            </Border>
+
+            <Border x:Name="departureBorder" Grid.Column="1" CornerRadius="20" Background="#C552EB" Margin="10" Padding="10">
+                <Label Grid.Column="1" Content="Departure" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="White" />
+            </Border>
+
+            <Border x:Name="arrivalBorder" Grid.Column="2" CornerRadius="20" Background="#C552EB" Margin="10" Padding="10">
+                <Label Grid.Column="3" Content="Arrival" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#C552EB"  Foreground="White"/>
+            </Border>
+
+            <Border Grid.Column="3" x:Name="priceBorder" CornerRadius="20" Background="#C552EB" Margin="10" Padding="10">
+                <Label  Grid.Column="4" Content="Price" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="White"/>
+            </Border>
+            <Button FontSize="15" Grid.Column="5" Background="#222840" BorderThickness="2" BorderBrush="#C552EB"  Foreground="White" Margin="10" Content="Booking History" Click="ViewBookingHistory">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="25"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <StackPanel>
+                <Label VerticalAlignment="Top" HorizontalAlignment="Center" x:Name="placeHolderLabel" Foreground="White" Content="Your search results will appear here " FontSize="20"/>
+                <Label VerticalAlignment="Top" HorizontalAlignment="Center" x:Name="noResultsLabel" Foreground="White" Content=" No Available Flights, please try a different schedule" FontSize="20"/>
+                <ListView  Background="#222840" x:Name="FlightData" >
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            <Setter Property="VerticalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <uc:FlightInformationControl AvailableFlightInformation="{Binding}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

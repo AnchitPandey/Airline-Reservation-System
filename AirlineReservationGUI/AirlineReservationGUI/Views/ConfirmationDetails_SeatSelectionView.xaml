@@ -1,0 +1,48 @@
+﻿<Window x:Class="AirlineReservationGUI.Views.ConfirmationDetails_SeatSelectionView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AirlineReservationGUI.Views"
+        mc:Ignorable="d"
+        Title="ConfirmationDetails_SeatSelectionView" Height="450" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Airline Reservation System" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <GroupBox Grid.Row="1" BorderThickness="5" Margin="5" Padding="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="2*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Content="Seat chart" Grid.ColumnSpan="6" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Button Foreground="White" Background="Gray" Click="SeatClicked" x:Name="seat1" Content="1" Grid.Row="1" />
+                <Button Foreground="White" Background="Gray" Click="SeatClicked" x:Name="seat2" Content="2" Grid.Row="1" Grid.Column="1" />
+                <Button Foreground="White" Background="Gray" Click="SeatClicked" x:Name="seat3" Content="3" Grid.Column="4" Grid.Row="1" />
+                <Button Foreground="White" Background="Gray" Click="SeatClicked" x:Name="seat4" Content="4" Grid.Column="5" Grid.Row="1" />
+                <Button Foreground="White" Background="Gray" Click="SeatClicked" x:Name="seat5" Content="5" Grid.Row="4" />
+                <Button Foreground="White" Background="Gray" Click="SeatClicked" x:Name="seat6" Content="6" Grid.Row="4" Grid.Column="1" />
+                <Button Foreground="White" Background="Gray" Click="SeatClicked" x:Name="seat7" Content="7" Grid.Column="4" Grid.Row="4"/>
+                <Button Foreground="White" Background="Gray" Click="SeatClicked" x:Name="seat8" Content="8" Grid.Column="5" Grid.Row="4"/>
+            </Grid>
+        </GroupBox>
+        <Button Click="Confirm" Content="Confirm Seat" Grid.Row="2" Background="Green" Foreground="White"/>
+        <Button Click="RefreshPage" Content="Refresh" Grid.Row="3" Background="DarkCyan" Foreground="White"/>
+    </Grid>
+</Window>

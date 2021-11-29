@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Intel_AirlineReservationService.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Intel_AirlineReservationService.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8080/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfflightSchedule">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="flightSchedule" nillable="true" type="tns:flightSchedule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfflightSchedule" nillable="true" type="tns:ArrayOfflightSchedule" />
+  <xs:complexType name="flightSchedule">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arrivalDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="arrivalLocationId" type="xs:int" />
+      <xs:element minOccurs="0" name="arrivalTime" type="ser:duration" />
+      <xs:element minOccurs="0" name="bookings" nillable="true" type="tns:ArrayOfbooking" />
+      <xs:element minOccurs="0" name="departureDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="departureLocationId" type="xs:int" />
+      <xs:element minOccurs="0" name="departureTime" type="ser:duration" />
+      <xs:element minOccurs="0" name="flightClassPrices" nillable="true" type="tns:ArrayOfflightClassPrice" />
+      <xs:element minOccurs="0" name="flightName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="flightNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="location" nillable="true" type="tns:location" />
+      <xs:element minOccurs="0" name="location1" nillable="true" type="tns:location" />
+      <xs:element minOccurs="0" name="scheduleId" type="xs:int" />
+      <xs:element minOccurs="0" name="seatingArrangements" nillable="true" type="tns:ArrayOfseatingArrangement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="flightSchedule" nillable="true" type="tns:flightSchedule" />
+  <xs:complexType name="ArrayOfbooking">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="booking" nillable="true" type="tns:booking" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfbooking" nillable="true" type="tns:ArrayOfbooking" />
+  <xs:complexType name="booking">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bookingDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="bookingId" type="xs:int" />
+      <xs:element minOccurs="0" name="flightPrice" type="xs:double" />
+      <xs:element minOccurs="0" name="flightSchedule" nillable="true" type="tns:flightSchedule" />
+      <xs:element minOccurs="0" name="nameOnTicket" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="passenger" nillable="true" type="tns:passenger" />
+      <xs:element minOccurs="0" name="passengerId" type="xs:int" />
+      <xs:element minOccurs="0" name="scheduleId" type="xs:int" />
+      <xs:element minOccurs="0" name="seatId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="booking" nillable="true" type="tns:booking" />
+  <xs:complexType name="passenger">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bookings" nillable="true" type="tns:ArrayOfbooking" />
+      <xs:element minOccurs="0" name="dateOfBirth" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="emailId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="passengerId" type="xs:int" />
+      <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="passenger" nillable="true" type="tns:passenger" />
+  <xs:complexType name="ArrayOfflightClassPrice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="flightClassPrice" nillable="true" type="tns:flightClassPrice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfflightClassPrice" nillable="true" type="tns:ArrayOfflightClassPrice" />
+  <xs:complexType name="flightClassPrice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="classType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="flightSchedule" nillable="true" type="tns:flightSchedule" />
+      <xs:element minOccurs="0" name="price" type="xs:double" />
+      <xs:element minOccurs="0" name="scheduleId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="flightClassPrice" nillable="true" type="tns:flightClassPrice" />
+  <xs:complexType name="location">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="flightSchedules" nillable="true" type="tns:ArrayOfflightSchedule" />
+      <xs:element minOccurs="0" name="flightSchedules1" nillable="true" type="tns:ArrayOfflightSchedule" />
+      <xs:element minOccurs="0" name="locationId" type="xs:int" />
+      <xs:element minOccurs="0" name="locationName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="location" nillable="true" type="tns:location" />
+  <xs:complexType name="ArrayOfseatingArrangement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="seatingArrangement" nillable="true" type="tns:seatingArrangement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfseatingArrangement" nillable="true" type="tns:ArrayOfseatingArrangement" />
+  <xs:complexType name="seatingArrangement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="classType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="flightSchedule" nillable="true" type="tns:flightSchedule" />
+      <xs:element minOccurs="0" name="scheduleId" type="xs:int" />
+      <xs:element minOccurs="0" name="seatAvailability" type="xs:boolean" />
+      <xs:element minOccurs="0" name="seatId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="seatingArrangement" nillable="true" type="tns:seatingArrangement" />
+</xs:schema>

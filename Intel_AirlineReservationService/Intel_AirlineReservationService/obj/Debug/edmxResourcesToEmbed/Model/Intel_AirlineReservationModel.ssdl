@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IntelAirlineReservationDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="booking">
+    <Key>
+      <PropertyRef Name="bookingId" />
+    </Key>
+    <Property Name="bookingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bookingDate" Type="date" Nullable="false" />
+    <Property Name="scheduleId" Type="int" Nullable="false" />
+    <Property Name="passengerId" Type="int" Nullable="false" />
+    <Property Name="seatId" Type="int" Nullable="false" />
+    <Property Name="flightPrice" Type="float" Nullable="false" />
+    <Property Name="nameOnTicket" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="flightClassPrice">
+    <Key>
+      <PropertyRef Name="scheduleId" />
+      <PropertyRef Name="classType" />
+    </Key>
+    <Property Name="scheduleId" Type="int" Nullable="false" />
+    <Property Name="classType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="price" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="flightSchedule">
+    <Key>
+      <PropertyRef Name="scheduleId" />
+    </Key>
+    <Property Name="scheduleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="departureTime" Type="time" Precision="7" />
+    <Property Name="departureDate" Type="date" Nullable="false" />
+    <Property Name="departureLocationId" Type="int" Nullable="false" />
+    <Property Name="arrivalTime" Type="time" Precision="7" />
+    <Property Name="arrivalDate" Type="date" Nullable="false" />
+    <Property Name="arrivalLocationId" Type="int" Nullable="false" />
+    <Property Name="flightNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="flightName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="location">
+    <Key>
+      <PropertyRef Name="locationId" />
+    </Key>
+    <Property Name="locationId" Type="int" Nullable="false" />
+    <Property Name="locationName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="passenger">
+    <Key>
+      <PropertyRef Name="passengerId" />
+    </Key>
+    <Property Name="passengerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="emailId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="firstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="lastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="dateOfBirth" Type="date" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="seatingArrangement">
+    <Key>
+      <PropertyRef Name="scheduleId" />
+      <PropertyRef Name="seatId" />
+    </Key>
+    <Property Name="scheduleId" Type="int" Nullable="false" />
+    <Property Name="seatId" Type="int" Nullable="false" />
+    <Property Name="classType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="seatAvailability" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_booking_flightSchedule">
+    <End Role="flightSchedule" Type="Self.flightSchedule" Multiplicity="1" />
+    <End Role="booking" Type="Self.booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="flightSchedule">
+        <PropertyRef Name="scheduleId" />
+      </Principal>
+      <Dependent Role="booking">
+        <PropertyRef Name="scheduleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_booking_passenger">
+    <End Role="passenger" Type="Self.passenger" Multiplicity="1" />
+    <End Role="booking" Type="Self.booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="passenger">
+        <PropertyRef Name="passengerId" />
+      </Principal>
+      <Dependent Role="booking">
+        <PropertyRef Name="passengerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_flightClassPrice_flightSchedule">
+    <End Role="flightSchedule" Type="Self.flightSchedule" Multiplicity="1" />
+    <End Role="flightClassPrice" Type="Self.flightClassPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="flightSchedule">
+        <PropertyRef Name="scheduleId" />
+      </Principal>
+      <Dependent Role="flightClassPrice">
+        <PropertyRef Name="scheduleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_flightSchedule_location">
+    <End Role="location" Type="Self.location" Multiplicity="1" />
+    <End Role="flightSchedule" Type="Self.flightSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="location">
+        <PropertyRef Name="locationId" />
+      </Principal>
+      <Dependent Role="flightSchedule">
+        <PropertyRef Name="departureLocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_flightSchedule_location1">
+    <End Role="location" Type="Self.location" Multiplicity="1" />
+    <End Role="flightSchedule" Type="Self.flightSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="location">
+        <PropertyRef Name="locationId" />
+      </Principal>
+      <Dependent Role="flightSchedule">
+        <PropertyRef Name="arrivalLocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_seatingArrangement_flightSchedule">
+    <End Role="flightSchedule" Type="Self.flightSchedule" Multiplicity="1" />
+    <End Role="seatingArrangement" Type="Self.seatingArrangement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="flightSchedule">
+        <PropertyRef Name="scheduleId" />
+      </Principal>
+      <Dependent Role="seatingArrangement">
+        <PropertyRef Name="scheduleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="IntelAirlineReservationDBModelStoreContainer">
+    <EntitySet Name="booking" EntityType="Self.booking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="flightClassPrice" EntityType="Self.flightClassPrice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="flightSchedule" EntityType="Self.flightSchedule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="location" EntityType="Self.location" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="passenger" EntityType="Self.passenger" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="seatingArrangement" EntityType="Self.seatingArrangement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_booking_flightSchedule" Association="Self.FK_booking_flightSchedule">
+      <End Role="flightSchedule" EntitySet="flightSchedule" />
+      <End Role="booking" EntitySet="booking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_booking_passenger" Association="Self.FK_booking_passenger">
+      <End Role="passenger" EntitySet="passenger" />
+      <End Role="booking" EntitySet="booking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_flightClassPrice_flightSchedule" Association="Self.FK_flightClassPrice_flightSchedule">
+      <End Role="flightSchedule" EntitySet="flightSchedule" />
+      <End Role="flightClassPrice" EntitySet="flightClassPrice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_flightSchedule_location" Association="Self.FK_flightSchedule_location">
+      <End Role="location" EntitySet="location" />
+      <End Role="flightSchedule" EntitySet="flightSchedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_flightSchedule_location1" Association="Self.FK_flightSchedule_location1">
+      <End Role="location" EntitySet="location" />
+      <End Role="flightSchedule" EntitySet="flightSchedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_seatingArrangement_flightSchedule" Association="Self.FK_seatingArrangement_flightSchedule">
+      <End Role="flightSchedule" EntitySet="flightSchedule" />
+      <End Role="seatingArrangement" EntitySet="seatingArrangement" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

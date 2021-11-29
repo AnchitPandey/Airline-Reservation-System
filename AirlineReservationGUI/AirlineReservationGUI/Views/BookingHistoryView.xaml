@@ -1,0 +1,101 @@
+﻿<Window x:Class="AirlineReservationGUI.Views.BookingHistoryView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uc ="clr-namespace:AirlineReservationGUI.Controls"
+        xmlns:local="clr-namespace:AirlineReservationGUI.Views"
+        mc:Ignorable="d"
+        Title="BookingHistoryView" Height="450" Width="800">
+    <Grid Background="#222840">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+      
+            <RowDefinition Height="8*" />
+        </Grid.RowDefinitions>
+
+       
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+
+            <Button FontSize="20" Background="#222840" BorderThickness="2" Foreground="White" BorderBrush="#C552EB" Grid.Column="0" Margin="10" Content="Back to search"  Click="NavigateToAvailableFlightsView">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="25"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            <Border Grid.Column="1" Background="#131633" CornerRadius="30">
+                <Label Grid.Column="1"  Foreground="White" Content="Airline Reservation System" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Border>
+    </Grid>
+        
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" CornerRadius="20" Background="#C552EB" Margin="5" >
+                <Label Content="Flight Name" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="White" />
+            </Border>
+
+            <Border BorderThickness="2" BorderBrush="#C552EB" Grid.Column="1" CornerRadius="20" Background="#C552EB" Margin="5" >
+                <Label Content="Departure" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="White" />
+            </Border>
+
+            <Border Grid.Column="2" CornerRadius="20" Background="#C552EB" Margin="5" >
+                <Label Content="Arrival" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="White" />
+            </Border>
+
+            <Border Grid.Column="3" CornerRadius="20" Background="#C552EB" Margin="5" >
+                <Label Content="Price" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="White" />
+            </Border>
+
+            <Border Grid.Column="4" CornerRadius="20" Background="#C552EB" Margin="5" >
+                <Label Content="Name on Ticket" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="White" />
+            </Border>
+
+            <Border Grid.Column="5" CornerRadius="20" Background="#C552EB" Margin="5" >
+                <Label Content="Seat Id" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="White" />
+            </Border>
+
+            <Border Grid.Column="6" CornerRadius="20" Background="#C552EB" Margin="5" >
+                <Label Content="BookingId" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" />
+            </Border>
+
+        </Grid>
+        
+
+
+           
+
+        <StackPanel Grid.Row="2">
+            <Label x:Name="defaultPlaceholder" Content="No Bookings Found" Foreground="Red" HorizontalAlignment="Center" FontSize="20" />
+            <ListView x:Name="BookingData" Grid.Row="2" Background="#222840">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <uc:BookingHistoryControl Bookings ="{Binding}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+    </Grid>
+</Window>

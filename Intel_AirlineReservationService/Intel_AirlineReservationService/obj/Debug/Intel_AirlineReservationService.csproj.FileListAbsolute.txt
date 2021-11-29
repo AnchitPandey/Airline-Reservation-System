@@ -1,0 +1,12 @@
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationService\bin\Debug\Intel_AirlineReservationService.dll.config
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationService\bin\Debug\Intel_AirlineReservationService.dll
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationService\bin\Debug\Intel_AirlineReservationService.pdb
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationService\bin\Debug\EntityFramework.dll
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationService\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationService\bin\Debug\EntityFramework.xml
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationService\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationService\obj\Debug\Intel_AirlineReservationService.csprojAssemblyReference.cache
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationService\obj\Debug\Intel_AirlineReservationService.csproj.CoreCompileInputs.cache
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationService\obj\Debug\Intel_AirlineReservationService.csproj.CopyComplete
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationService\obj\Debug\Intel_AirlineReservationService.dll
+C:\Users\anchi\source\repos\Intel_AirlineReservationService\Intel_AirlineReservationService\obj\Debug\Intel_AirlineReservationService.pdb

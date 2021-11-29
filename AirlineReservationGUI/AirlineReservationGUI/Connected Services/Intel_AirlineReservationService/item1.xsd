@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8080/?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:8080/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Intel_AirlineReservationService.Serializable_Models" />
+  <xs:import schemaLocation="http://localhost:8080/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:8080/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Intel_AirlineReservationService.Model" />
+  <xs:element name="login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="loginResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dateOfBirth" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RegisterUserResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllLocations">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllLocationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAllLocationsResult" nillable="true" type="q1:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBookingHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="passengerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBookingHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Intel_AirlineReservationService.Serializable_Models" minOccurs="0" name="GetBookingHistoryResult" nillable="true" type="q2:ArrayOfBookingHistory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFlightSchedules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="passengerId" type="xs:int" />
+        <xs:element minOccurs="0" name="departureLocation" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="arrivalLocation" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="departureDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="travelClass" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFlightSchedulesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Intel_AirlineReservationService.Serializable_Models" minOccurs="0" name="GetFlightSchedulesResult" nillable="true" type="q3:ArrayOfAvailableFlightInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFlightSchedule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="flightNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="flightName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="departureDate" type="xs:dateTime" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="departureTime" type="q4:duration" />
+        <xs:element minOccurs="0" name="departureLocation" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="arrivalDate" type="xs:dateTime" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="arrivalTime" type="q5:duration" />
+        <xs:element minOccurs="0" name="arrivalLocation" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFlightScheduleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddFlightScheduleResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addScheduleClassPrice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="scheduleId" type="xs:int" />
+        <xs:element minOccurs="0" name="classPrice1" type="xs:float" />
+        <xs:element minOccurs="0" name="classPrice2" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addScheduleClassPriceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addSeatAvailability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="scheduleId" type="xs:int" />
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="economySeatIds" nillable="true" type="q6:ArrayOfint" />
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="businessSeatIds" nillable="true" type="q7:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addSeatAvailabilityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAvailableSeats">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="scheduleId" type="xs:int" />
+        <xs:element minOccurs="0" name="classType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAvailableSeatsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAvailableSeatsResult" nillable="true" type="q8:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BookSeat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="scheduleId" type="xs:int" />
+        <xs:element minOccurs="0" name="seatId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BookSeatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BookSeatResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addBooking">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="scheduleId" type="xs:int" />
+        <xs:element minOccurs="0" name="passengerId" type="xs:int" />
+        <xs:element minOccurs="0" name="seatId" type="xs:int" />
+        <xs:element minOccurs="0" name="flightPrice" type="xs:double" />
+        <xs:element minOccurs="0" name="nameOnTicket" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addBookingResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllSchedulesFlights">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllSchedulesFlightsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Intel_AirlineReservationService.Model" minOccurs="0" name="GetAllSchedulesFlightsResult" nillable="true" type="q9:ArrayOfflightSchedule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
