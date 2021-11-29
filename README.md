@@ -20,6 +20,10 @@ To execute a forced refresh on UI, there is a "Refresh" button. The user can als
 
 In case there are no flight bookings, appropriate message will be displayed after the search button is clicked as shown in the figure below
 
+![No Flight Available View](https://user-images.githubusercontent.com/40236708/143804544-f20c2410-5282-4d1b-910f-0956f14890ca.PNG)
 
-## 3. 
+
+## 3. Booking History view - for customers
+
+When the customer clicks on Booking history button in the main page view, he is directed to the page shown below. Here, the customer can view the details of all the flights he successfully booked in the past
 
